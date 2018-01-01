@@ -1,0 +1,259 @@
+<div id="body-register">
+  <div class="col-md-10 col-md-offset-1">
+    <h2 style="text-align:center">ĐĂNG KÝ</h2>
+    <h6 class="col-md-1">
+      <em>Trường bắt buộc</em>
+    </h6>
+
+    <div class="col-md-4 col-md-offset-3">
+      <div class="col-md-4">
+        <label class="custom-control custom-radio">
+
+          <input id="radioStacked1" name="DK" type="radio"  (click)="check()"  class="custom-control-input label-text" checked>
+
+          <span>Cá nhân</span>
+        </label>
+      </div>
+      <div class="col-md-6">
+        <label class="custom-control custom-radio" style="display: flex">
+          <input id="radioStacked2" name="DK" type="radio"  (click)="check()"  class="custom-control-input label-text" >
+
+          <span style="white-space:nowrap">Công ty/Tổ chức</span>
+        </label>
+      </div>
+    </div>
+
+    <form action="/action_page.php">
+      <div id="ca-nhan" *ngIf=test2>
+          <!-- <div id="ca-nhan" *ngIf="test2"> -->
+
+        <div class="form-group col-md-11 col-md-offset-1">
+          <label class="control-label col-md-3" for="name">Họ và tên:</label>
+          <div class="col-md-4">
+            <input type="text" class="form-control" id="name">
+          </div>
+
+        </div>
+
+        <div class="form-group col-md-11 col-md-offset-1">
+          <label class="control-label col-md-3" for="sdt">Số điện thoại:</label>
+          <div class="col-md-4">
+            <input type="tel" class="form-control" id="sdt">
+          </div>
+        </div>
+
+        <div class="form-group col-md-11 col-md-offset-1">
+          <label class="control-label col-md-3" for="birth">Ngày sinh :</label>
+          <div class="col-md-4">
+            <input type="date" class="form-control" id="birth">
+          </div>
+        </div>
+
+        <div class="form-group col-md-11 col-md-offset-1">
+          <label class="control-label col-md-3" for="address">Địa chỉ:</label>
+          <div class="col-md-4">
+            <input type="text" class="form-control" id="address">
+          </div>
+          <div class="col-md-5">
+            <div class="col-md-6">
+              <label class="custom-control custom-radio">
+                <input id="radioStacked3" name="TP" type="radio" class="custom-control-input" checked>
+
+                <span>TP.HCM</span>
+              </label>
+            </div>
+            <div class="col-md-6" style="margin-bottom:15px">
+              <select class="form-control">
+                <option selected></option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+
+            <div class="col-md-6">
+              <label class="custom-control custom-radio">
+                <input id="radioStacked4" name="TP" type="radio" class="custom-control-input">
+
+                <span>Tỉnh thành khác</span>
+              </label>
+            </div>
+            <div class="col-md-6">
+              <select class="form-control">
+                <option selected></option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+
+
+
+          </div>
+        </div>
+
+        <div class="form-group col-md-11 col-md-offset-1">
+          <label class="control-label col-md-3" for="name">Giới tính:</label>
+          <div class="col-md-2">
+            <label class="custom-control custom-radio">
+              <input id="radioStacked5" name="GT" type="radio" checked="checked" class="custom-control-input label-text">
+
+              <span>Nam</span>
+            </label>
+          </div>
+          <div class="col-md-1">
+            <label class="custom-control custom-radio">
+              <input id="radioStacked6" name="GT" type="radio" class="custom-control-input label-text">
+
+              <span>Nữ</span>
+            </label>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div id="doanh-nghiep" *ngIf="!test2">
+
+        <div class="form-group col-md-11 col-md-offset-1">
+          <label class="control-label col-md-3" for="name">Tên công ty/Tổ chức:</label>
+          <div class="col-md-4">
+            <input type="text" class="form-control" id="name">
+          </div>
+
+        </div>
+
+        <div class="form-group col-md-11 col-md-offset-1">
+          <label class="control-label col-md-3" for="address">Địa chỉ:</label>
+          <div class="col-md-4">
+            <input type="text" class="form-control" id="address">
+          </div>
+          <div class="col-md-5">
+            <div class="col-md-6">
+              <label class="custom-control custom-radio">
+                <input id="radioStacked3" name="TP" type="radio" class="custom-control-input" checked>
+
+                <span>TP.HCM</span>
+              </label>
+            </div>
+            <div class="col-md-6" style="margin-bottom:15px">
+              <select class="form-control">
+                <option selected></option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+
+            <div class="col-md-6">
+              <label class="custom-control custom-radio">
+                <input id="radioStacked4" name="TP" type="radio" class="custom-control-input">
+
+                <span>Tỉnh thành khác</span>
+              </label>
+            </div>
+            <div class="col-md-6">
+              <select class="form-control">
+                <option selected></option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+
+
+
+          </div>
+        </div>
+
+        <div class="form-group col-md-11 col-md-offset-1">
+          <label class="control-label col-md-3" for="sdt">Số điện thoại công ty</label>
+          <div class="col-md-4">
+            <input type="tel" class="form-control" id="sdt">
+          </div>
+        </div>
+
+        <div class="form-group col-md-11 col-md-offset-1">
+          <label class="control-label col-md-3" for="msthue">Mã số thuế :</label>
+          <div class="col-md-4">
+            <input type="number" class="form-control" id="msthue">
+          </div>
+        </div>
+        <div class="form-group col-md-11 col-md-offset-1">
+          <label class="control-label col-md-3" for="nguoidd">Người đại diện:</label>
+          <div class="col-md-4">
+            <input type="text" class="form-control" id="nguoidd">
+          </div>
+
+        </div>
+
+
+
+      </div>
+
+
+      <div class="form-group col-md-11 col-md-offset-1">
+        <label class="control-label col-md-3" for="email">Email:</label>
+        <div class="col-md-4">
+          <input type="email" class="form-control" id="email">
+        </div>
+
+      </div>
+
+
+      <div class="form-group col-md-11 col-md-offset-1">
+        <label class="control-label col-md-3" for="pw">Mật khẩu:</label>
+        <div class="col-md-4">
+          <input type="password" class="form-control" id="pw">
+        </div>
+
+      </div>
+
+
+      <div class="form-group col-md-11 col-md-offset-1">
+        <label class="control-label col-md-3" for="repw">Nhập lại mật khẩu:</label>
+        <div class="col-md-4">
+          <input type="text" class="form-control" id="repw">
+        </div>
+
+      </div>
+
+      <div class="form-group col-md-11 col-md-offset-1" style="margin-top:30px;">
+        <label class="control-label col-md-3" for="submit" style="margin:20px auto">Mã xác nhận:</label>
+        <div class="col-md-4">
+          <div class="submit">
+            <div class="checkbox">
+              <label style="font-size: 2em">
+                <input type="checkbox" value="" checked>
+                <span class="cr">
+                  <i class="cr-icon fa fa-check"></i>
+                </span>
+                <p style="font-size:14px">
+                  <strong>Bạn không phải là người máy ?</strong>
+                </p>
+              </label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-md-11 col-md-offset-1" style="margin-top:30px;">
+        <div class="col-md-4 col-md-offset-3">
+          <div class="col-md-6">
+            <input type="button" class="btn btn-primary btn-block" id="taotk" value="Tạo tài khoản">
+          </div>
+          <div class="col-md-6">
+            <input type="button" class="btn btn-primary btn-block" id="quaylai" value="Quay lại">
+          </div>
+        </div>
+
+      </div>
+
+
+
+    </form>
+
+
+  </div>
+</div>

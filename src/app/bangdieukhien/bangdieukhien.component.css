@@ -1,0 +1,49 @@
+div.button-margin
+{
+    
+    margin: 15px auto;
+    text-align: center;
+}
+#body-register
+{
+    display: flow-root;
+}
+.animation{
+    
+    margin-left: 200px;
+    transition:2s}
+div input{
+    width: 150px;
+}
+.btn-primary
+{
+    background-color: rgb(50,76,125);
+    color: white;
+    
+}
+input[type=button]:focus
+{
+    background-color: aqua;
+    border-color:aqua; 
+    color: black;
+}
+.one
+{
+    background-color: rgb(236,236,236);
+    border-radius: 5px;
+    padding: 10px; 
+    margin: 10px;
+    height: 300px;
+}
+.stt
+{
+    
+    border-radius:18px;
+    background-color: #5bd85b;
+    color: white;
+    position: relative;
+    float: right;
+    padding: 5px 10px;
+    margin-right: 20px;
+    
+}

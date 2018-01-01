@@ -1,0 +1,84 @@
+<div id="body-register">
+  <div class="col-md-12">
+    <div class="col-md-3 button-margin">
+
+      <input class="btn btn-primary" type="button" value="Yêu cầu" />
+
+    </div>
+    <div class="col-md-3 button-margin">
+
+      <input class="btn btn-primary" type="button" value="Hợp đồng" />
+
+    </div>
+    <div class="col-md-3 button-margin">
+
+      <input class="btn btn-primary" type="button" value="Lịch khám" />
+    </div>
+    <div class="col-md-3 button-margin">
+
+      <input class="btn btn-primary" type="button" value="Kết quả" />
+    </div>
+    <div class="col-md-3 button-margin">
+      <input class="btn btn-primary" type="button" value="Tạo yêu cầu" />
+
+    </div>
+  </div>
+
+
+
+  <div id="body-show col-md-12">
+    
+    <div class="col-md-3">
+      <div id="YC-colum" *ngFor="let YC of YeuCau">
+        <div class="one">
+          <h5 style="display:inline"><strong>YC.{{YC.id}}</strong> </h5>
+          <span class="stt" id="stt">{{YC.stt}}</span>
+          <p>Số lương: {{YC.soLuong}}</p>
+          <p>Gói dịch vụ: {{YC.goiDichVu}} </p>
+          <p>Thời gian khám: {{YC.thoiGianKham}}</p>
+          <p>Nơi khám: {{YC.noiKham}}</p>
+          <p>Dịch vụ kèm theo: {{YC.dichVuKemTheo}}</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="body-show col-md-12">
+    
+      <div class="col-md-3">
+        <div id="HD-colum" *ngFor="let HD of HopDong">
+          <div class="one">
+            <h5 style="display:inline"><strong>HD.{{HD.id}}</strong> </h5>
+            <span class="stt" id="stt">{{HD.stt}}</span>
+            <p>Tổng số tiền: {{HD.tongSoTien}}</p>
+            <p>Đặt cọc: {{HD.datCoc}}</p>
+            <p>Ngày đặt cọc: {{HD.ngayDatCoc}} </p>
+            <p>Còn lại: {{HD.conLai}}</p>
+            <p>Hạn thanh toán: {{HD.hanThanhToan}}</p>
+            <p>Phương thức TT: {{HD.phuongThucThanhToan}}</p>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="body-show col-md-12">
+    
+        <div class="col-md-3">
+          <div id="HD1-colum" *ngFor="let YC of YeuCau">
+            <div class="one">
+              <h5 style="display:inline"><strong>YC.{{YC.id}}</strong> </h5>
+              <span class="stt" id="stt">{{YC.stt}}</span>
+              <p>Số lương: {{YC.soLuong}}</p>
+              <p>Gói dịch vụ: {{YC.goiDichVu}} </p>
+              <p>Thời gian khám: {{YC.thoiGianKham}}</p>
+              <p>Nơi khám: {{YC.noiKham}}</p>
+              <p>Dịch vụ kèm theo: {{YC.dichVuKemTheo}}</p>
+    
+            </div>
+          </div>
+        </div>
+      </div>
+
+</div>
