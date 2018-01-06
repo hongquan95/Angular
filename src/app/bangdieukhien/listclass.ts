@@ -19,8 +19,9 @@ export class YC {
     stt: string;
   
   }
-  // export class LK {
-  //   id: number;
-  //   name: string;
-  // }
+  export class LK {
+    id: number;
+    name: string;
+    stt: string;
+  }
   

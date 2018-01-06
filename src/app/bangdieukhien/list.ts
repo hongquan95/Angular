@@ -1,4 +1,4 @@
-import {YC, HD} from './listclass'
+import {YC, HD, LK} from './listclass'
 
 
 
@@ -15,8 +15,8 @@ export const HOPDONG: HD[] = [
     {id: 3, tongSoTien: 430000, datCoc: 80000, ngayDatCoc: "26/12/2017", conLai: 350000, hanThanhToan: "03/01/2018", phuongThucThanhToan: "Tiền mặt",stt:"Xong"},
 ];
 
-// export const LIENKET: LK[] = [
-//     {id: 1, name:"A"},
-//     {id: 2, name:"B"},
-//     {id: 3, name:"C"},
-// ];
+export const LIENKET: LK[] = [
+    {id: 1, name:"Lộc Ngô kt",stt:"Xong"},
+    {id: 1, name:"Lộc Ngô kt",stt:"Đang khám"},
+    {id: 1, name:"Lộc Ngô kt",stt:"Đang khám"},
+];

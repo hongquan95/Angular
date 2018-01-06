@@ -12,6 +12,8 @@ import { FooterComponent } from './footer/footer.component';
 import { BodyComponent } from './body/body.component';
 import { RegisterPageComponent } from './register-page/register-page.component';
 import { BangdieukhienComponent } from './bangdieukhien/bangdieukhien.component';
+import { AppRoutingModule } from './/app-routing.module';
+import { TaskregisterComponent } from './taskregister/taskregister.component';
 
 
 
@@ -20,16 +22,17 @@ import { BangdieukhienComponent } from './bangdieukhien/bangdieukhien.component'
     AppComponent,
     HeroesComponent,
     HeroDetailComponent,
-    HeaderComponent,
-    FooterComponent,
-    BodyComponent,
-    RegisterPageComponent,
-    BangdieukhienComponent,
+    // HeaderComponent,
+    // FooterComponent,
+    // RegisterPageComponent,
+    // BangdieukhienComponent,
+    TaskregisterComponent,
     
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
 
   ],
   providers: [],

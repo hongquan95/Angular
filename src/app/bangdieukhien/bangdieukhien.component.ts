@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {YC, HD} from './listclass';
-import {YEUCAU,HOPDONG} from './list';
+import {YC, HD, LK} from './listclass';
+import {YEUCAU,HOPDONG, LIENKET} from './list';
 
 @Component({
   selector: 'app-bangdieukhien',
@@ -11,6 +11,7 @@ export class BangdieukhienComponent implements OnInit {
 
  YeuCau = YEUCAU;
  HopDong = HOPDONG;
+ LienKet = LIENKET;
   
   constructor() { }
 

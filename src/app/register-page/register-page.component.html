@@ -1,31 +1,33 @@
-<div id="body-register">
-  <div class="col-md-10 col-md-offset-1">
-    <h2 style="text-align:center">ĐĂNG KÝ</h2>
-    <h6 class="col-md-1">
-      <em>Trường bắt buộc</em>
-    </h6>
+<app-header></app-header>
+<form #userForm="ngForm">
+  <div id="body-register">
+    <div class="col-md-10 col-md-offset-1">
+      <h2 style="text-align:center">ĐĂNG KÝ</h2>
+      <h6 class="col-md-1">
+        <em>Trường bắt buộc</em>
+      </h6>
 
-    <div class="col-md-4 col-md-offset-3">
-      <div class="col-md-4">
-        <label class="custom-control custom-radio">
+      <div class="col-md-4 col-md-offset-3">
+        <div class="col-md-4">
+          <label class="custom-control custom-radio">
 
-          <input id="radioStacked1" name="DK" type="radio"  (click)="check()"  class="custom-control-input label-text" checked>
+            <input id="radioStacked1" name="DK" type="radio" (click)="check()" class="custom-control-input label-text" checked>
 
-          <span>Cá nhân</span>
-        </label>
+            <span>Cá nhân</span>
+          </label>
+        </div>
+        <div class="col-md-6">
+          <label class="custom-control custom-radio" style="display: flex">
+            <input id="radioStacked2" name="DK" type="radio" (click)="check()" class="custom-control-input label-text">
+
+            <span style="white-space:nowrap">Công ty/Tổ chức</span>
+          </label>
+        </div>
       </div>
-      <div class="col-md-6">
-        <label class="custom-control custom-radio" style="display: flex">
-          <input id="radioStacked2" name="DK" type="radio"  (click)="check()"  class="custom-control-input label-text" >
 
-          <span style="white-space:nowrap">Công ty/Tổ chức</span>
-        </label>
-      </div>
-    </div>
 
-    <form action="/action_page.php">
       <div id="ca-nhan" *ngIf=test2>
-          <!-- <div id="ca-nhan" *ngIf="test2"> -->
+        <!-- <div id="ca-nhan" *ngIf="test2"> -->
 
         <div class="form-group col-md-11 col-md-offset-1">
           <label class="control-label col-md-3" for="name">Họ và tên:</label>
@@ -252,8 +254,10 @@
 
 
 
-    </form>
 
 
+
+    </div>
   </div>
-</div>
+</form>
+<app-footer></app-footer>

@@ -6,6 +6,9 @@
    display:grid;
     width: 100%;
     margin: 0;
+    /* z-index: 1;
+    position: fixed; */
+    top: 0;
     
 }
 a{
@@ -18,10 +21,13 @@ div.topbar{
 }
 .taskbar
 {
-    /* position: fixed;
-    top: 0; */
+    /* z-index: 1;
+    position: fixed; */
+    
     height: 80px;
-    background-color:white
+    background-color:white;
+    padding-left: 0;
+    
 }
 li a{
     padding: 20px 30px;
@@ -85,4 +91,12 @@ a.style-a{
     font-size: 15px;
     color: white;
      
+}
+.animation-top{
+    
+    margin-left: 200px;
+    transition:1.5s}
+.navbar{
+    border: 0;
+    margin-bottom: 0;
 }
