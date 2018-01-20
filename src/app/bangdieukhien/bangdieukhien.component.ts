@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {YC, HD, LK} from './listclass';
 import {YEUCAU,HOPDONG, LIENKET} from './list';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-bangdieukhien',

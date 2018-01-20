@@ -1,0 +1,202 @@
+<form [formGroup]="phrForm" (ngSubmit)="submitForm()" novalidate>  
+  <!-- novalidate (ngSubmit)="submitForm()"-->
+  <div class="col-md-10 col-md-offset-1">
+    <h2>TẠO HỒ SƠ BỆNH ÁN CÁ NHÂN (PHR)</h2>
+    <div class=" table1 col-md-10 col-md-offset-1">
+      <div class="form-group col-md-12" style="padding-top:15px">
+        <div class="col-md-4">
+          <div class="col-md-5">Họ và tên</div>
+          <div class="col-md-7">
+            <input class="form-control" class="form-control" type="text" formControlName="userName">
+            <button >submit</button>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="col-md-5">Thời gian khám</div>
+          <div class="col-md-7">
+            <input class="form-control" class="form-control" type="text">
+          </div>
+        </div>
+      </div>
+      <div class="form-group col-md-12">
+        <div class="col-md-4">
+          <div class="col-md-5">Ngày sinh</div>
+          <div class="col-md-7">
+            <input class="form-control" type="text">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="col-md-5">Nơi khám</div>
+          <div class="col-md-7">
+            <input class="form-control" type="text">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="col-md-5">Chuyên khoa</div>
+          <div class="col-md-7">
+            <input class="form-control" type="text">
+          </div>
+        </div>
+      </div>
+      <div class="form-group col-md-12">
+        <div class="col-md-4">
+          <div class="col-md-5">Giới tính</div>
+          <div class="col-md-7">
+            <input class="form-control" type="text">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="col-md-5">Bác sĩ khám</div>
+          <div class="col-md-7">
+            <input class="form-control" type="text">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="col-md-5">Dị ứng</div>
+          <div class="col-md-7">
+            <input class="form-control" type="text">
+          </div>
+        </div>
+
+      </div>
+      <div class="form-group col-md-12">
+        <div class="col-md-4">
+          <div class="col-md-5">ID</div>
+          <div class="col-md-7">
+            <input class="form-control" type="text">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="col-md-5">Số điện thoại</div>
+          <div class="col-md-7">
+            <input class="form-control" type="text">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="col-md-5">Chủng ngừa</div>
+          <div class="col-md-7">
+            <input class="form-control" type="text">
+          </div>
+        </div>
+      </div>
+      <div class="form-group col-md-12">
+        <div class="col-md-4">
+          <div class="col-md-5">Loại </div>
+          <div class="col-md-7">
+            <input class="form-control" type="text">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="col-md-5">Email</div>
+          <div class="col-md-7">
+            <input class="form-control" type="text">
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="table-2 col-md-10 col-md-offset-1">
+      <div class="col-md-4">LÝ DO KHÁM BỆNH</div>
+      <div class="col-md-8">
+        <textarea rows="3" class="text-in">
+      
+      </textarea>
+      </div>
+
+    </div>
+    <div class=" align-vertical-center table-2 col-md-10 col-md-offset-1" style="background:rgb(240,247,253)">
+      <div class="col-md-4">SINH HIỆU</div>
+      <div class="col-md-8">
+        <div class="text-in">
+          <p>Mạch</p>
+          <p>Huyết áp</p>
+          <p>Cao</p>
+          <p>Cân nặng</p>
+
+        </div>
+      </div>
+
+    </div>
+    <div class="table-2 col-md-10 col-md-offset-1">
+      <div class="col-md-4">XÉT NGHIỆM</div>
+      <div class="col-md-8">
+        <textarea rows="3" class="text-in">
+        
+        </textarea>
+      </div>
+
+    </div>
+    <div id="table1" class="col-md-10 col-md-offset-1 table1">
+      <h5 type="button" data-toggle="collapse" data-target="#tb1">CHẨN ĐOÁN HÌNH ẢNH</h5>
+
+      <div class=" collapse" id="tb1">
+        <div class="col-md-12">
+          <div class="form-group">
+            <li class="col-md-4">X-QUANG</li>
+            <div class="col-md-8">
+              <input style="margin-bottom:15px" class="form-control" type="text" />
+            </div>
+
+
+          </div>
+
+          <div class="form-group">
+            <li class="col-md-4">EGG (ĐIỆN TÂM ĐỒ)
+            </li>
+            <div class="col-md-8">
+              <input style="margin-bottom:15px" class="form-control" type="text" />
+            </div>
+
+
+          </div>
+
+
+          <div class="form-group">
+            <li class="col-md-4">NỘI SOI</li>
+            <div class="col-md-8">
+              <input style="margin-bottom:15px" class="form-control" type="text" />
+            </div>
+
+
+          </div>
+
+          <div class="form-group">
+            <li class="col-md-4">CT(CHỤP CẮT LỚP)</li>
+            <div class="col-md-8">
+              <input style="margin-bottom:15px" class="form-control" type="text" />
+            </div>
+
+          </div>
+
+          <div class="form-group">
+            <li class="col-md-4">MRI(CỘNG HƯỞNG TỪ)</li>
+            <div class="col-md-8">
+              <input style="margin-bottom:15px" class="form-control" type="text" />
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="table-2 col-md-10 col-md-offset-1">
+      <div class="col-md-4">CÁC CẬN LÂM SÀNG KHÁC</div>
+      <div class="col-md-8">
+        <textarea rows="3" class="text-in">
+      
+      </textarea>
+      </div>
+
+    </div>
+    <div class="table-2 col-md-10 col-md-offset-1" STYLE="background: rgb(240,247,253);">
+      <div class="col-md-4">CHẨN ĐOÁN</div>
+      <div class="col-md-8">
+        <textarea rows="3" class="text-in">
+      
+      </textarea>
+      </div>
+
+    </div>
+
+  </div>
+</form>

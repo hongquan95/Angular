@@ -11,28 +11,27 @@
         <div class="col-md-4">
           <label class="custom-control custom-radio">
 
-            <input id="radioStacked1" name="DK" type="radio" (click)="check()" class="custom-control-input label-text" checked>
+            <input id="radioStacked1" name="company" type="radio" value="person" class="custom-control-input label-text" [(ngModel)]="register.company">
 
             <span>Cá nhân</span>
           </label>
         </div>
         <div class="col-md-6">
           <label class="custom-control custom-radio" style="display: flex">
-            <input id="radioStacked2" name="DK" type="radio" (click)="check()" class="custom-control-input label-text">
+            <input id="radioStacked2" name="company" type="radio" value="company" class="custom-control-input label-text" [(ngModel)]="register.company">
 
             <span style="white-space:nowrap">Công ty/Tổ chức</span>
           </label>
         </div>
       </div>
 
-
-      <div id="ca-nhan" *ngIf=test2>
-        <!-- <div id="ca-nhan" *ngIf="test2"> -->
+      <div id="ca-nhan" *ngIf="register.company=='person'">
 
         <div class="form-group col-md-11 col-md-offset-1">
           <label class="control-label col-md-3" for="name">Họ và tên:</label>
           <div class="col-md-4">
-            <input type="text" class="form-control" id="name">
+            <input type="text" class="form-control" name="name" [(ngModel)]="register.name">
+            <div>{{register.name}}</div>
           </div>
 
         </div>
@@ -40,21 +39,24 @@
         <div class="form-group col-md-11 col-md-offset-1">
           <label class="control-label col-md-3" for="sdt">Số điện thoại:</label>
           <div class="col-md-4">
-            <input type="tel" class="form-control" id="sdt">
+            <input type="tel" class="form-control" name="phone" [(ngModel)]="register.phone">
+            <div>{{register.phone}}</div>
           </div>
         </div>
 
         <div class="form-group col-md-11 col-md-offset-1">
           <label class="control-label col-md-3" for="birth">Ngày sinh :</label>
           <div class="col-md-4">
-            <input type="date" class="form-control" id="birth">
+            <!-- <input type="date" class="form-control" id="birth" name="birth" [(ngModel)]="register.birth" > -->
+            <dp-date-picker theme="dp-material"></dp-date-picker>
           </div>
         </div>
 
         <div class="form-group col-md-11 col-md-offset-1">
           <label class="control-label col-md-3" for="address">Địa chỉ:</label>
           <div class="col-md-4">
-            <input type="text" class="form-control" id="address">
+            <input type="text" class="form-control" id="address" name="address" [(ngModel)]="register.address">
+            <div>{{register.address}}</div>
           </div>
           <div class="col-md-5">
             <div class="col-md-6">
@@ -112,15 +114,46 @@
           </div>
 
         </div>
+        <div class="form-group col-md-11 col-md-offset-1">
+          <label class="control-label col-md-3" for="email">Email:</label>
+          <div class="col-md-4">
+            <input type="email" class="form-control" id="email">
+          </div>
+
+        </div>
+
+
+        <div class="form-group col-md-11 col-md-offset-1">
+          <label class="control-label col-md-3" for="pw">Mật khẩu:</label>
+          <div class="col-md-4">
+            <input type="password" class="form-control" id="pw" name="pwd" [(ngModel)]="register.pwd" #password="ngModel">
+          </div>
+
+        </div>
+
+
+        <div class="form-group col-md-11 col-md-offset-1">
+          <label class="control-label col-md-3" for="repw">Nhập lại mật khẩu:</label>
+          <div class="col-md-4">
+            <input type="password" required validateEqual="password" class="form-control" name="repwd" [(ngModel)]="register.repwd" #repwd="ngModel">
+          </div>
+          <div>{{register.pwd}}</div>
+          <div>{{register.repwd}}</div>
+          <div *ngIf="repwd.valid">Password Error</div>
+        </div>
+
 
       </div>
 
-      <div id="doanh-nghiep" *ngIf="!test2">
-
+      <div id="doanh-nghiep" *ngIf="register.company!='person'">
         <div class="form-group col-md-11 col-md-offset-1">
           <label class="control-label col-md-3" for="name">Tên công ty/Tổ chức:</label>
           <div class="col-md-4">
-            <input type="text" class="form-control" id="name">
+            <input type="text" class="form-control" name="name" [(ngModel)]="register.name" minlength="8" #name="ngModel" pattern="[0-9]"
+              required>
+            <div *ngIf="name.errors && name.errors.minlength">Tên phải lớn hơn 8 kí tự</div>
+            <div *ngIf="name.errors && name.errors.pattern">Chi nhap vao so</div>
+            <div *ngIf="name.errors && name.errors.required &&(name.dirty||name.touched)">Thong tin bat buoc</div>
           </div>
 
         </div>
@@ -128,7 +161,8 @@
         <div class="form-group col-md-11 col-md-offset-1">
           <label class="control-label col-md-3" for="address">Địa chỉ:</label>
           <div class="col-md-4">
-            <input type="text" class="form-control" id="address">
+            <input type="text" class="form-control" name="company_address" [(ngModel)]="register.company_address">
+
           </div>
           <div class="col-md-5">
             <div class="col-md-6">
@@ -171,54 +205,58 @@
         <div class="form-group col-md-11 col-md-offset-1">
           <label class="control-label col-md-3" for="sdt">Số điện thoại công ty</label>
           <div class="col-md-4">
-            <input type="tel" class="form-control" id="sdt">
+            <input type="tel" class="form-control" name="company_phone" [(ngModel)]="register.company_phone">
+
           </div>
         </div>
 
         <div class="form-group col-md-11 col-md-offset-1">
           <label class="control-label col-md-3" for="msthue">Mã số thuế :</label>
           <div class="col-md-4">
-            <input type="number" class="form-control" id="msthue">
+            <input type="number" class="form-control" id="msthue" name="code" [(ngModel)]="register.code">
           </div>
         </div>
         <div class="form-group col-md-11 col-md-offset-1">
           <label class="control-label col-md-3" for="nguoidd">Người đại diện:</label>
           <div class="col-md-4">
-            <input type="text" class="form-control" id="nguoidd">
+            <input type="text" class="form-control" id="nguoidd" name="representer" [(ngModel)]="register.representer">
+          </div>
+
+        </div>
+
+        <div class="form-group col-md-11 col-md-offset-1">
+          <label class="control-label col-md-3" for="email">Email:</label>
+          <div class="col-md-4">
+            <input type="email" class="form-control" id="email" name="company_email" [(ngModel)]="register.company_email">
           </div>
 
         </div>
 
 
+        <div class="form-group col-md-11 col-md-offset-1">
+          <label class="control-label col-md-3" for="pw">Mật khẩu:</label>
+          <div class="col-md-4">
+            <input type="password" class="form-control" id="pw" name="company_pwd" [(ngModel)]="register.company_pwd" #password="ngModel">
+          </div>
 
-      </div>
-
-
-      <div class="form-group col-md-11 col-md-offset-1">
-        <label class="control-label col-md-3" for="email">Email:</label>
-        <div class="col-md-4">
-          <input type="email" class="form-control" id="email">
         </div>
 
-      </div>
 
+        <div class="form-group col-md-11 col-md-offset-1">
+          <label class="control-label col-md-3" for="repw">Nhập lại mật khẩu:</label>
+          <div class="col-md-4">
+            <input type="password" required validateEqual="password" class="form-control" id="repw" name="company_repwd" [(ngModel)]="register.company_repwd"
+              #repwd="ngModel">
+          </div>
 
-      <div class="form-group col-md-11 col-md-offset-1">
-        <label class="control-label col-md-3" for="pw">Mật khẩu:</label>
-        <div class="col-md-4">
-          <input type="password" class="form-control" id="pw">
+          <div *ngIf="company_repwd.errors">Password Error</div>
         </div>
 
+
+
       </div>
 
 
-      <div class="form-group col-md-11 col-md-offset-1">
-        <label class="control-label col-md-3" for="repw">Nhập lại mật khẩu:</label>
-        <div class="col-md-4">
-          <input type="text" class="form-control" id="repw">
-        </div>
-
-      </div>
 
       <div class="form-group col-md-11 col-md-offset-1" style="margin-top:30px;">
         <label class="control-label col-md-3" for="submit" style="margin:20px auto">Mã xác nhận:</label>

@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';  //CAN THAN IMPORT TU DONG BI SAI
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-phr',
+  templateUrl: './phr.component.html',
+  styleUrls: ['./phr.component.css']
 })
-export class LoginComponent implements OnInit {
- 
+export class PhrComponent implements OnInit {
+  
   register = "";
   phrForm = new FormGroup(
     {
@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
       gender: new FormControl()
 
     });
+
   constructor() { }
 
   ngOnInit() {

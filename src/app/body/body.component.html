@@ -2,16 +2,20 @@
 
 <div class="body" >
   <div class="wallpaper">
-    <form id="register" class="col-md-3 col-md-offset-8" style=" border-radius: 15px;">
+    <form #userForm="ngForm" id="register" class="col-md-3 col-md-offset-8" style=" border-radius: 15px;">
       <div class="form-group">
         <label for="email">Tài khoản</label>
-        <input type="email" class="form-control" id="email" placeholder="loc.ngo@bys.vn" name="email">
+        <input type="email" class="form-control" id="email" placeholder="loc.ngo@bys.vn" [(ngModel)] ="login.userName" name="userName" required minlength="8" #name="ngModel" pattern="^[a-zA-Z0-9]+$" ><!--[a-zA-Z].{0,}-->
+        <div *ngIf="name.errors && name.errors.pattern">Chi nhap duoc nhap chu </div>
+        <!-- <code>{{name.errors.pattern | json}}</code> -->
+        <div *ngIf="name.errors && name.errors.required &&(name.dirty||name.touched)">Thong tin bat buoc</div>
       </div>
       <div class="form-group">
 
         <label for="pwd">Mật khẩu:</label>
         
-        <input type="password" class="form-control" id="pwd" placeholder="*******" name="pwd">
+        <input type="password" class="form-control" id="pwd" placeholder="*******" name="passWord" [(ngModel)]="login.passWord" #pass="ngModel" minlength="8">
+        <div *ngIf="pass.errors && pass.errors.minlength">password lon hon 8 ki tu</div>
       </div>
 
       <input class="btn btn-primary btn-block" type="button" value="Đăng nhập">
@@ -26,7 +30,7 @@
       </div>
       <div class="form-group">
         <label>Bạn chưa có tài khoản?</label>
-        <input class="btn btn-primary btn-block" type="button" value="Đăng ký">
+        <input class="btn btn-primary btn-block" type="button" value="Đăng ký"  routerLink="/dangky">
       </div>
       <div class="form-group">
         <label>Đăng nhập bằng</label>

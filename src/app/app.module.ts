@@ -14,6 +14,14 @@ import { RegisterPageComponent } from './register-page/register-page.component';
 import { BangdieukhienComponent } from './bangdieukhien/bangdieukhien.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { TaskregisterComponent } from './taskregister/taskregister.component';
+import{ RegisterMdModule } from './register-md/register-md.module';
+import {LoginModule} from './login/login.module';
+import { ValidateDirective } from './register-page/validate.directive';
+import { TopDirective } from './top.directive';
+import { RequestComponent } from './request/request.component';
+// import { HeaderComponent } from './header/header.component';
+// import { ReactiveFormsModule } from '@angular/forms';  // <-- #1 import module
+
 
 
 
@@ -27,12 +35,18 @@ import { TaskregisterComponent } from './taskregister/taskregister.component';
     // RegisterPageComponent,
     // BangdieukhienComponent,
     TaskregisterComponent,
+    ValidateDirective,
+    TopDirective,
+    // RequestComponent,
+    // ReactiveFormsModule
+   
     
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule
+   
 
   ],
   providers: [],
