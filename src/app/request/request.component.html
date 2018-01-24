@@ -1,69 +1,111 @@
 <div class="col-md-10 col-md-offset-1">
   <h3>YÊU CẦU DỊCH VỤ Y TẾ</h3>
-  <form class="col-md-6"  [formGroup]="requestForm">
-    <div class="form-group row">
-      <label class="col-md-2" for="Bảo hiểm">Bảo hiểm</label>
-      <div class="col-md-7">
-        <select class="form-control" id="Bảo hiểm">
-          <option>Không có bảo hiểm</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-        </select>
+  <form class="col-md-12" [formGroup]="requestForm" (ngSubmit)="showSubmitForm()" novalidate>
+    <div class="col-md-6">
+      <div class="form-group row">
+        <label class="col-md-2" for="Bảo hiểm">Bảo hiểm</label>
+        <div class="col-md-7">
+          <select class="form-control" id="Bảo hiểm" formControlName="baoHiem">
+            <option>Không có bảo hiểm</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </select>
+        </div>
       </div>
+      <div class="form-group row">
+        <label class="col-md-2" for="Dịch vụ">Dịch vụ</label>
+      </div>
+      <div formArrayName="dichVu">
+        <div *ngFor="let dichVu of dichVuArr.controls; let i = index" [formGroupName]="i">
+          <div class="form-group row">
+            <div class="col-md-2 col-md-offset-2 ">
+              <select class="form-control" formControlName="tenDichVu">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+            </div>
+            <!-- <div>{{dichVu.get('tenDichVu').value}}</div> -->
+            <div *ngIf="dichVu.get('tenDichVu').value!=null">
+              <div class="col-md-4">
+                <select class="form-control" formControlName="themOption">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>
+              </div>
+              <div *ngIf="dichVu.get('themOption').value!=null">
+                <div class="col-md-4">
+                  <label class="col-md-2"style="padding: 0;margin-top: 10px;">SL</label>
+                  <div class="col-md-6"style="padding:0">
+                    <input class="form-control" formControlName="soLuong" type="text">
+                  </div>
+                  <button style=" border-color: transparent;;background: transparent;margin-right:25px"  (click)="xoaDichVu(i,dichVuArr.controls)"><i class="fa fa-2x fa-times" aria-hidden="true"></i></button>
+                  <!-- <div>{{dichVu.get('soLuong').value}}</div> -->
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <button class="col-md-offset-2 add" type="button" (click)="themDichVu()">+ Thêm</button>
+
+      <div class="form-group row">
+        <label class="col-md-2" for="Ngày khám">Ngày khám</label>
+        <div class="col-md-7">
+          <input class="form-control" type="date" formControlName="ngayKham">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-2" for="Nơi khám">Nơi khám</label>
+        <div class="col-md-7">
+          <select class="form-control" id="Nơi khám" formControlName="noiKham">
+            <option>Chọn nơi khám để hiện giá</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-2" for="Nơi khám" style="white-space:nowrap">Tính bảo mật</label>
+        <div class="col-md-7">
+          <input class="checkbox-primary" type="checkbox"> Niêm phong kết quả theo hồ sơ cá nhân
+        </div>
+      </div>
+
     </div>
-    <div class="form-group row">
-      <label class="col-md-2" for="Dịch vụ">Dịch vụ</label>
-      <div class="col-md-2">
-        <select class="form-control" id="Dịch vụ">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-        </select>
+    <div class="display col-md-5">
+      <h3 id="report">THÔNG TIN YÊU CẦU</h3>
+      <div class="title">
+        <strong>Ngày khám</strong> {{requestForm.value.ngayKham}}</div>
+      <div class="title">
+        <strong>Nơi khám</strong> {{requestForm.value.noiKham}}</div>
+      <div class="title">
+        <strong>Bảo hiểm</strong> {{requestForm.value.baoHiem}}</div>
+
+
+      <h3>Dịch vụ</h3>
+
+      <!-- <div>{{requestForm.value.dichVu}}</div> -->
+      <label class="col-md-4">Gói</label>
+      <label class="col-md-4">Tên gói</label>
+      <label class="col-md-4">Số lượng</label>
+      <div class="col-md-12" *ngFor="let dichVu of requestForm.value.dichVu">
+        <div class="col-md-4">{{dichVu.tenDichVu}}</div>
+        <div class="col-md-4">{{dichVu.themOption}}</div>
+        <div class="col-md-4">{{dichVu.soLuong}}</div>
+
       </div>
-    </div>
-    <div  class="form-group row"formArrayName="dichVu">
-      <div class="col-md-2 col-md-offset-2" *ngFor = "let dichvu of dichVuArr.controls; let i = index"[formGroupName]="i">
-        <input class="form-control" formControlName="tenDichVu">
-      </div>
-    </div>
-    <button type="button" (click)="themDichVu()">Add</button>
-    <div class="form-group row">
-      <label class="col-md-2" for="Ngày khám">Ngày khám</label>
-      <div class="col-md-7">
-        <input class="form-control" type="date">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-md-2" for="Nơi khám">Nơi khám</label>
-      <div class="col-md-7">
-        <select class="form-control" id="Nơi khám">
-          <option>Chọn nơi khám để hiện giá</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-md-2" for="Nơi khám" style="white-space:nowrap">Tính bảo mật</label>
-      <div class="col-md-7">
-        <input class="checkbox-primary" type="checkbox"> Niêm phong kết quả theo hồ sơ cá nhân
-      </div>
+      <div class="col-md-12">TỔNG CỘNG</div>
+      <button class="col-md-3 col-md-offset-3 btn btn-primary" id="yes">Đồng ý</button>
+      <input class="col-md-3 btn btn-primary" value="Quay lại" id="back">
     </div>
 
   </form>
-  <div class="col-md-4 col-md-offset-1">
-    <h3 id="report">THÔNG TIN YÊU CẦU</h3>
-    <div>Ngày khám</div>
-    <div>Nơi khám</div>
-    <div>Bảo hiểm</div>
-    <div>Dịch vụ</div>
-    <div>TỔNG CỘNG</div>
-    <input class="col-md-3 col-md-offset-3 btn btn-primary" value="Đồng ý" id="yes">
-    <input class="col-md-3 btn btn-primary" value="Quay lại" id="back">
-  </div>
-
-
 </div>

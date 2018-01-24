@@ -36,6 +36,37 @@ div.col-md-4.col-md-offset-1{
     border-color:transparent;
     
 }
+.add{
+    margin-left: 107px;
+    margin-bottom: 15px;background: transparent;
+    border-color: transparent;
+    color: #1c1c46;
+    font-size: 16px;
+}
+.add2{
+    
+    margin-bottom: 15px;background: transparent;
+    border-color: transparent;
+    color: #1c1c46;
+    font-size: 16px;
+}
+label.col-md-4{
+    text-align: center
+}
+div.col-md-4{
+    margin-bottom: 10px;
+    text-align: center;
+}
+/* div.col-md-  */
+.title{
+    margin: 10px 10px;
+}
 
+.display{
+    background: #9fe4e3;
+    margin-left: 20px;
 
-
+}
+.col-md-5{
+    padding: 0;
+}

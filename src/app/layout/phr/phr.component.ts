@@ -16,7 +16,7 @@ export class PhrComponent implements OnInit {
       gender: new FormControl()
 
     });
-
+// 
   constructor() { }
 
   ngOnInit() {
